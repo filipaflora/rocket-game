@@ -1,0 +1,35 @@
+class Star {
+  constructor(gameScreen) {
+    this.gameScreen = gameScreen;
+
+    this.left = Math.floor(
+      Math.random() * this.gameScreen.offsetWidth * 0.8 + this.gameScreen.offsetWidth * 0.1
+    );
+    this.top = Math.floor(
+      Math.random() * this.gameScreen.offsetHeight * 0.8 + this.gameScreen.offsetHeight * 0.1
+    ); // Check if we need to change that
+
+    // this.top = 0;
+    this.width = 50;
+    this.height = 50;
+
+    this.element = document.createElement("img");
+    this.element.src = "./images/star.png";
+    this.element.style.position = "absolute";
+    this.element.style.top = `${this.top}px`;
+    this.element.style.left = `${this.left}px`;
+    this.element.style.height = `${this.height}px`;
+    this.element.style.width = `${this.width}px`;
+
+    this.gameScreen.appendChild(this.element);
+  }
+
+  updatePosition() {
+    this.element.style.left = `${this.left}px`;
+    this.element.style.top = `${this.top}px`;
+  }
+
+  move() {
+    this.updatePosition();
+  }
+}

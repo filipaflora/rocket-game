@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 0;
+  text-align: center;
+  height: 100%;
+  overflow: hidden;
+  
+
+}
+
+
+main {
+  background-color: rgb(50, 42, 131);
+}
+
+#game-intro {
+  padding: 20px 0;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgb(27, 23, 71);
+  align-items: center;
+  width: 80vw;
+  height: 80wh;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  border-radius: 20px;
+
+}
+
+#instructions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 25px;
+}
+
+#game-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  padding: 20px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+#stats {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 20px;
+  background-color: rgba(50, 42, 131, 0.5);
+  width: 5vw;
+  height: 190px;
+  padding: 0 20px;
+  border-radius: 10px;
+  margin-left: 15px;
+}
+
+.general-stats {
+  font-size: 30px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+
+}
+
+
+.rocket-icon {
+  width: 50px;
+  height: 80px;
+}
+
+.planet-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.star-icon{
+  width: 30px;
+  height: 30px;
+}
+
+#game-screen {
+  display: none;
+  align-content: center;
+  
+  padding: 20px 0;
+  overflow: hidden;
+  position: relative;
+  background-image: url(/images/background.jpeg);
+  background-size: cover;
+  animation: slide 5s linear infinite;
+}
+
+@keyframes slide {
+  0% {
+    background-position: 0 -1000px;
+  }
+  95% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 50px;
+  }
+}
+
+#game-end {
+  display: none;
+  color: white;
+
+ 
+  /* width: 100vw;
+  height: 100vh; */
+
+}
+
+#game-intro p {
+  font-size: 18px;
+  font-family: "verdana";
+}
+
+.arrows-img {
+  width: 150px;
+}
+
+.play-button {
+  font-size: 30px;
+  background-image: url(/images/background.jpeg);
+  
+  color: white;
+  padding: 20px 40px;
+  border: 0;
+  box-shadow: 0;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}

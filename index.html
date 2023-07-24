@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <title>Rocket Game</title>
+  </head>
+  <body>
+    <main>
+      
+      <div id="game-intro">
+        <img src="/images/rocket.png" alt="" class="rocket-icon" />
+        <div id="instructions">
+          <p>Avoid</p>
+          <img src="/images/planet.png" alt="" class="planet-icon" />
+          <p>Collect</p>
+          <img src="/images/star.png" alt="" class="star-icon" />
+          <!-- <p>Increase speed</p>
+          <img src="/images/fire.png" alt="" class="fire-icon"> -->
+        </div>
+
+        <p>Use the arrows to move the rocket</p>
+        <img src="/images/keyboard.png" alt="" class="arrows-img" />
+
+        <div id="btn-start-game">
+          <button id = "start-button" class="play-button">Take off!</button>
+        </div>
+      </div>
+
+      
+
+      <div id="game-container">
+        <div id="game-screen">
+          <div id="stats">
+            <div id="stats-score" class="general-stats">
+              <p>🏆</p>
+              <!-- <img src="/images/score.png" alt="" /> -->
+              <p><span id="score">0</span></p>
+            </div>
+            <div id="stats-lives" class="general-stats">
+              <p>❤️</p>
+              <!-- <img src="/images/heart.png" alt="" /> -->
+              <p><span id="lives">5</span></p>
+            </div>
+            <!-- <div id="stats-boost">
+              <img src="/images/fire.png" alt="" >
+              <p><span id="boost">0</span></p>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <div id="game-end">
+        <!-- <img src="/images/fire.png" alt="" /> -->
+        <h1>Game Over!</h1>
+        <p>🏆 You scored <span id = "final-score"></span> points! 🏆</p>
+
+        <br />
+        <button id = "restart-button" class="play-button">Play Again!</button>
+      </div>
+
+      <!-- come back to style -->
+    </main>
+    <script type="text/javascript" src="js/star.js">
+    </scripttype>
+  </script>
+    <script type="text/javascript" src="js/planet.js">
+      </scripttype>
+    </script>
+    <script type="text/javascript" src="js/rocket.js">
+      </scripttype>
+    </script>
+    <script type="text/javascript" src="js/game.js">
+      </scripttype>
+    </script>
+    <script type="text/javascript" src="js/script.js">
+      </scripttype>
+    </script>
+  </body>
+</html>
