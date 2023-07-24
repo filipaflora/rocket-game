@@ -1,6 +1,7 @@
 window.onload = function () {
   const startButton = document.getElementById("start-button");
   const restartButton = document.getElementById("restart-button");
+  // const backgroundAudio = document.getElementById("background-audio");
 
   let game;
 
@@ -17,6 +18,11 @@ window.onload = function () {
   restartButton.addEventListener("click", function () {
     location.reload();
   });
+
+  // backgroundAudio.addEventListener("DOMContentLoaded", event => {
+  //   backgroundAudio.volume = 0.2;
+  //   Audio.play
+  // })
 
   function handleKeydown(event) {
     const key = event.key;

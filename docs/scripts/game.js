@@ -10,7 +10,7 @@ class Game {
       800,
       100,
       150,
-      "./images/rocket.png"
+      "docs/images/rocket.png"
     );
 
     this.width = 1200;
@@ -190,6 +190,5 @@ class Game {
     let finalScore = document.getElementById("final-score");
 
     finalScore.innerHTML = this.score;
-
   }
 }
