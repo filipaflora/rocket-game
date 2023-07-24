@@ -97,7 +97,7 @@ main {
   padding: 20px 0;
   overflow: hidden;
   position: relative;
-  background-image: url(/images/background.jpeg);
+  background-image: url(/docs/images/background.jpeg);
   background-size: cover;
   animation: slide 5s linear infinite;
 }
@@ -135,8 +135,7 @@ main {
 
 .play-button {
   font-size: 30px;
-  background-image: url(/images/background.jpeg);
-  
+  background-image: url(/docs/images/background.jpeg);
   color: white;
   padding: 20px 40px;
   border: 0;
