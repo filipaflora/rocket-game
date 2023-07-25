@@ -1,18 +1,15 @@
-class Planet {
+class Fire {
   constructor(gameScreen) {
     this.gameScreen = gameScreen;
 
-    this.left = Math.floor(
-      Math.random() * this.gameScreen.offsetWidth * 0.8 +
-        this.gameScreen.offsetWidth * 0.1
-    ); 
-
+    this.left = 1150;
     this.top = 0;
-    this.width = 100;
-    this.height = 100;
+
+    this.width = 50;
+    this.height = 50;
 
     this.element = document.createElement("img");
-    this.element.src = "docs/images/planet.png";
+    this.element.src = "docs/images/fire.png";
     this.element.style.position = "absolute";
     this.element.style.top = `${this.top}px`;
     this.element.style.left = `${this.left}px`;
@@ -20,6 +17,8 @@ class Planet {
     this.element.style.width = `${this.width}px`;
 
     this.gameScreen.appendChild(this.element);
+
+    this.movement = -10;
   }
 
   updatePosition() {
@@ -28,7 +27,18 @@ class Planet {
   }
 
   move() {
-    this.top += 3;
+    // Define it it's a positive (goes to the right) or a negative (goes to the left) movement
+    if (this.left === 0) {
+      this.movement = 10;
+    } else if (this.left + this.width > this.gameScreen.offsetWidth) {
+      this.movement = -10;
+    }
+
+    // Movement itself
+    this.left += this.movement;
+    this.top += 1;
+
+    
     this.updatePosition();
   }
 }

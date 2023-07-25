@@ -1,7 +1,7 @@
 window.onload = function () {
   const startButton = document.getElementById("start-button");
   const restartButton = document.getElementById("restart-button");
-  // const backgroundAudio = document.getElementById("background-audio");
+  
 
   let game;
 
@@ -19,10 +19,7 @@ window.onload = function () {
     location.reload();
   });
 
-  // backgroundAudio.addEventListener("DOMContentLoaded", event => {
-  //   backgroundAudio.volume = 0.2;
-  //   Audio.play
-  // })
+ 
 
   function handleKeydown(event) {
     const key = event.key;
@@ -54,7 +51,6 @@ window.onload = function () {
       }
     }
   }
-
 
   function handleKeyup(event) {
     const key = event.key;
@@ -89,5 +85,4 @@ window.onload = function () {
 
   window.addEventListener("keydown", handleKeydown);
   window.addEventListener("keyup", handleKeyup);
-
 };

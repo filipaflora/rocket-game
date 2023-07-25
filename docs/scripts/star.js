@@ -3,10 +3,12 @@ class Star {
     this.gameScreen = gameScreen;
 
     this.left = Math.floor(
-      Math.random() * this.gameScreen.offsetWidth * 0.8 + this.gameScreen.offsetWidth * 0.1
+      Math.random() * this.gameScreen.offsetWidth * 0.8 +
+        this.gameScreen.offsetWidth * 0.1
     );
     this.top = Math.floor(
-      Math.random() * this.gameScreen.offsetHeight * 0.8 + this.gameScreen.offsetHeight * 0.1
+      Math.random() * this.gameScreen.offsetHeight * 0.8 +
+        this.gameScreen.offsetHeight * 0.1
     ); // Check if we need to change that
 
     // this.top = 0;

@@ -3,6 +3,7 @@ class Game {
     this.startScreen = document.getElementById("game-intro");
     this.gameScreen = document.getElementById("game-screen");
     this.gameEndScreen = document.getElementById("game-end");
+    this.gameContainer = document.getElementById("game-container");
 
     this.rocket = new Rocket(
       this.gameScreen,
@@ -18,9 +19,11 @@ class Game {
 
     this.planet = [];
     this.star = [];
+    this.fire = [];
 
     this.isPushingPlanet = false;
     this.isPushingStar = false;
+    this.isPushingFire = false;
 
     this.score = 0;
 
@@ -29,6 +32,9 @@ class Game {
     this.gameIsOver = false;
 
     this.firstStarPush = true;
+    this.firstFirePush = true;
+
+    this.backgroundMusic = null;
   }
 
   start() {
@@ -36,9 +42,13 @@ class Game {
     this.gameScreen.style.width = `${this.width}px`;
 
     this.startScreen.style.display = "none";
-    // console.log(this.startScreen.style.display);
 
     this.gameScreen.style.display = "block";
+
+    this.backgroundMusic = document.createElement("audio");
+    this.backgroundMusic.src = "/docs/sounds/background-audio.mp3";
+    this.gameScreen.appendChild(this.backgroundMusic);
+    this.backgroundMusic.play();
 
     setInterval(() => {
       this.star.push(new Star(this.gameScreen));
@@ -64,12 +74,34 @@ class Game {
       }, 3000);
     }, 2000);
 
+    setInterval(() => {
+      this.fire.push(new Fire(this.gameScreen));
+      this.isPushingFire = false;
+      // console.log("pushing star");
+      // console.log("stars array when pushing:", this.star);
+    }, 10000);
+
+    // setTimeout(() => {
+    //   setInterval(() => {
+    //     if (this.firstFirePush) {
+    //       this.firstFirePush = false;
+    //       this.fire[0].element.remove();
+    //       this.fire.splice(0, 1);
+    //       // console.log("removing star");
+    //       // console.log("stars array when removing:", this.star);
+    //     } else if (this.fire.length != 0) {
+    //       this.fire[0].element.remove();
+    //       this.fire.splice(0, 1);
+    //       // console.log("removing star");
+    //       // console.log("stars array when removing:", this.star);
+    //     }
+    //   }, 3000);
+    // }, 2000);
+
     this.gameLoop();
   }
 
   gameLoop() {
-    //console.log("Game Loop");
-
     if (this.gameIsOver) {
       return;
     }
@@ -104,9 +136,6 @@ class Game {
 
         this.lives--;
       } else if (singlePlanet.top > this.height) {
-        // this.score++;
-        //this.score++ uncomment for star
-
         singlePlanet.element.remove();
 
         this.planet.splice(i, 1);
@@ -135,37 +164,29 @@ class Game {
 
           this.score++;
         }
-        // } else if (singlePlanet.top > this.height) {
-
-        //   this.score++;
-        //   //this.score++ uncomment for star
-
-        //   singlePlanet.element.remove();
-
-        //   this.planet.splice(i, 1);
-        // }
       }
     }
 
-    /*if (!this.star.length && !this.isPushingStar) {
-      this.isPushingStar = true;
-      const pushStar = setTimeout(() => {
-        this.star.push(new Star(this.gameScreen));
-        this.isPushingStar = false;
-        console.log("pushing star");
-        console.log("stars array when pushing:", this.star);
-        clearTimeout(pushStar);
-      }, 3000);
-    } else if (this.star.length > 0 && !this.isPushingStar) {
-      const deleteStar = setTimeout(() => {
-        this.star.forEach((starElement, index) => {
-          starElement.element.remove();
-          this.star.splice(index, 1);
-          console.log("removing star");
-          console.log("stars array when removing:", this.star);
-          clearTimeout(deleteStar);
-        });
-      }, 4000);*/
+    // CHECK FOR COLLISION WITH FIRE  
+    
+    for (let i = 0; i < this.fire.length; i++) {
+      const singleFire = this.fire[i];
+      singleFire.move();
+      let fireCounter = 0;
+
+      // if (this.rocket.didCollide(singleFire)) {
+      //   singleFire.element.remove();
+
+      //   this.fire.splice(i, 1);
+
+      //   this.fireCounter++;
+
+      // } else if (singlePlanet.top > this.height) {
+      //   singlePlanet.element.remove();
+
+      //   this.planet.splice(i, 1);
+      // }
+    }
   }
 
   endGame() {
@@ -181,14 +202,15 @@ class Game {
 
     this.planet = [];
     this.star = [];
-    // console.log(this.planet);
     this.gameIsOver = true;
 
-    this.gameScreen.style.display = "none";
-    this.gameEndScreen.style.display = "block";
+    this.gameContainer.style.display = "none";
+    this.gameEndScreen.style.display = "flex";
 
     let finalScore = document.getElementById("final-score");
 
     finalScore.innerHTML = this.score;
+
+    this.backgroundMusic.pause();
   }
 }

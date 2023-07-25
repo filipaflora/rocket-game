@@ -1,17 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Tektur:wght@400;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
+  font-family: "Tektur", cursive;
 }
 
 body {
   padding: 0;
   text-align: center;
-  height: 100%;
-  overflow: hidden;
-  
-
+  cursor: url(/docs/images/rocket-cursor.png), auto;
 }
-
 
 main {
   background-color: rgb(50, 42, 131);
@@ -19,19 +18,29 @@ main {
 
 #game-intro {
   padding: 20px 0;
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: rgb(27, 23, 71);
   align-items: center;
-  width: 80vw;
-  height: 80wh;
+  width: 60vw;
+  height: 60wh;
   transform: translate(-50%, -50%);
   position: absolute;
   top: 50%;
   left: 50%;
   color: white;
   border-radius: 20px;
+}
+
+#game-intro p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.arrows-img {
+  width: 100px;
+  margin-bottom: 20px;
 
 }
 
@@ -40,6 +49,26 @@ main {
   flex-direction: row;
   justify-content: space-evenly;
   gap: 25px;
+  margin: 30px 0;
+}
+
+.rocket-icon {
+  width: 100px;
+  height: 160px;
+  /* position: relative;
+  z-index: 10;
+  top: -90px; */
+  
+}
+
+.planet-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.star-icon {
+  width: 30px;
+  height: 30px;
 }
 
 #game-container {
@@ -71,35 +100,20 @@ main {
   display: flex;
   flex-direction: row;
   gap: 20px;
-
 }
 
 
-.rocket-icon {
-  width: 50px;
-  height: 80px;
-}
-
-.planet-icon {
-  width: 30px;
-  height: 30px;
-}
-
-.star-icon{
-  width: 30px;
-  height: 30px;
-}
 
 #game-screen {
   display: none;
   align-content: center;
-  
   padding: 20px 0;
   overflow: hidden;
   position: relative;
   background-image: url(/docs/images/background.jpeg);
   background-size: cover;
   animation: slide 5s linear infinite;
+  cursor: auto;
 }
 
 @keyframes slide {
@@ -117,21 +131,24 @@ main {
 #game-end {
   display: none;
   color: white;
-
- 
-  /* width: 100vw;
-  height: 100vh; */
-
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-#game-intro p {
-  font-size: 18px;
-  font-family: "verdana";
+#game-end h1 {
+  font-size: 8rem;
+  margin: 0;
+  margin-bottom: 20px;
 }
 
-.arrows-img {
-  width: 150px;
+#game-end p {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
 }
+
+
 
 .play-button {
   font-size: 30px;
@@ -142,4 +159,5 @@ main {
   box-shadow: 0;
   border-radius: 5px;
   margin-bottom: 20px;
+  cursor: url(/docs/images/rocket-cursor.png), pointer;
 }
