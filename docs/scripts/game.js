@@ -29,12 +29,17 @@ class Game {
 
     this.lives = 5;
 
+    this.fireCounter = 0;
+
     this.gameIsOver = false;
 
     this.firstStarPush = true;
     this.firstFirePush = true;
 
     this.backgroundMusic = null;
+    this.planetAudio = new Audio ("/docs/sounds/planet-audio.mp3");
+    this.starAudio = new Audio ("/docs/sounds/star-audio.mp3");
+    this.fireAudio = new Audio ("/docs/sounds/fire-audio.mp3");
   }
 
   start() {
@@ -113,9 +118,14 @@ class Game {
   update() {
     let score = document.getElementById("score");
     let lives = document.getElementById("lives");
+    let fireCounter = document.getElementById("fire");
+
+  
 
     score.innerHTML = this.score;
     lives.innerHTML = this.lives;
+    fireCounter.innerHTML = this.fireCounter;
+    
 
     if (this.lives === 0) {
       this.endGame();
@@ -123,24 +133,33 @@ class Game {
 
     this.rocket.move();
 
-    // check for collision with planet
+    // CHECK FOR COLLISIONS WITH PLANET 
 
     for (let i = 0; i < this.planet.length; i++) {
       const singlePlanet = this.planet[i];
       singlePlanet.move();
 
       if (this.rocket.didCollide(singlePlanet)) {
+
+        this.planetAudio.play();
+        this.planetAudio.volume = 0.1;
+
         singlePlanet.element.remove();
 
         this.planet.splice(i, 1);
 
         this.lives--;
+
+        
+
       } else if (singlePlanet.top > this.height) {
         singlePlanet.element.remove();
 
         this.planet.splice(i, 1);
       }
     }
+
+    
 
     if (!this.planet.length && !this.isPushingPlanet) {
       this.isPushingPlanet = true;
@@ -150,7 +169,8 @@ class Game {
       }, 500);
     }
 
-    // check for collision with star
+    // CHECK FOR COLLISIONS WITH STAR
+
     for (let i = 0; i < this.star.length; i++) {
       const singleStar = this.star[i];
       singleStar.move();
@@ -158,6 +178,7 @@ class Game {
       if (this.rocket.didCollide(singleStar)) {
         if (this.star) {
           console.log("crashed with a star");
+          this.starAudio.play();
           singleStar.element.remove();
 
           this.star.splice(i, 1);
@@ -167,25 +188,26 @@ class Game {
       }
     }
 
-    // CHECK FOR COLLISION WITH FIRE  
-    
+    // CHECK FOR COLLISIONS WITH FIRE  
+
     for (let i = 0; i < this.fire.length; i++) {
       const singleFire = this.fire[i];
       singleFire.move();
-      let fireCounter = 0;
+      
+      
+      if (this.rocket.didCollide(singleFire)) {
+        this.fireAudio.play();
+        singleFire.element.remove();
 
-      // if (this.rocket.didCollide(singleFire)) {
-      //   singleFire.element.remove();
+        this.fire.splice(i, 1);
 
-      //   this.fire.splice(i, 1);
+        this.fireCounter++;
+      }
 
-      //   this.fireCounter++;
-
-      // } else if (singlePlanet.top > this.height) {
-      //   singlePlanet.element.remove();
-
-      //   this.planet.splice(i, 1);
-      // }
+      if (this.fireCounter === 5){
+        this.fireCounter = 0;
+        this.lives++;
+      }
     }
   }
 
@@ -213,4 +235,5 @@ class Game {
 
     this.backgroundMusic.pause();
   }
+
 }
