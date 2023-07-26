@@ -36,7 +36,7 @@ class Fire {
 
     // Movement itself
     this.left += this.movement;
-    this.top += 1;
+    this.top += 1.5;
 
     
     this.updatePosition();

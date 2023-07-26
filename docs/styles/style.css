@@ -17,14 +17,15 @@ main {
 }
 
 #game-intro {
-  padding: 20px 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  /* padding: 20px 0; */
+  /* display: flex; */
+  /* flex-direction: column;
+  justify-content: space-between; */
+  /* gap: 5px; */
   background-color: rgb(27, 23, 71);
   align-items: center;
   width: 60vw;
-  height: 60wh;
+  height: 70vh;
   transform: translate(-50%, -50%);
   position: absolute;
   top: 50%;
@@ -41,7 +42,6 @@ main {
 .arrows-img {
   width: 100px;
   margin-bottom: 20px;
-
 }
 
 #instructions {
@@ -49,27 +49,76 @@ main {
   flex-direction: row;
   justify-content: space-evenly;
   gap: 25px;
-  margin: 30px 0;
+  /* margin: 30px 0; */
 }
 
 .rocket-icon {
-  width: 100px;
-  height: 160px;
-  /* position: relative;
+  width: 120px;/* width: 150px;  */
+  height: 170px;/* height: 220px; */
+  position: relative;
   z-index: 10;
-  top: -90px; */
-  
+  top: -70px;
 }
 
-.planet-icon {
-  width: 30px;
-  height: 30px;
+.instruction-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.instruction-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.avoid-collect {
+  background-image: url("/docs/images/background.jpeg");
+  width: 300px;
+  padding: 20px 0;
+  border-radius: 8px;
+  position: relative;
+  top: -50px;
+}
+
+.heading {
+  margin-bottom: 10px;
+  position: relative;
+  top: -60px;
+}
+
+/* .planet-icon {
+  width: 20px;
+  height: 20px;
 }
 
 .star-icon {
   width: 30px;
   height: 30px;
 }
+
+.blackhole-icon {
+  width: 20px;
+  height: 20px;
+} */
+
+/* .avoid-collect{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 200px;
+  background-image: url(/docs/images/background.jpeg);
+  height: 150px;
+  border-radius: 8px;
+
+} */
+
+/* .instructions-text {
+  position: relative;
+  z-index: 10;
+  top: -30px;
+  
+} */
 
 #game-container {
   display: flex;
@@ -78,6 +127,8 @@ main {
   padding: 20px 0;
   justify-content: center;
   align-items: center;
+  cursor: auto;
+  
 }
 
 #stats {
@@ -101,8 +152,6 @@ main {
   flex-direction: row;
   gap: 20px;
 }
-
-
 
 #game-screen {
   display: none;
@@ -148,9 +197,8 @@ main {
   margin-bottom: 40px;
 }
 
-
-
 .play-button {
+  
   font-size: 30px;
   background-image: url(/docs/images/background.jpeg);
   color: white;
@@ -160,4 +208,13 @@ main {
   border-radius: 5px;
   margin-bottom: 20px;
   cursor: url(/docs/images/rocket-cursor.png), pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
+
+.play-button:active {
+  box-shadow: none;
+}
+
+
+
+
