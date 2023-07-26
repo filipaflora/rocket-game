@@ -88,14 +88,14 @@ class Game {
       this.fire.push(new Fire(this.gameScreen));
       this.isPushingFire = false;
       
-    }, 15000);
+    }, 12000);
 
     // BLACKHOLE
     setInterval(() => {
       this.blackhole.push(new Blackhole(this.gameScreen));
       this.isPushingBlackhole = false;
       
-    }, 13000);
+    }, 15000);
 
     setTimeout(() => {
       setInterval(() => {
@@ -109,7 +109,7 @@ class Game {
           this.blackhole.splice(0, 1);
           
         }
-      }, 13000);
+      }, 15000);
     }, 5000);
 
     this.gameLoop();

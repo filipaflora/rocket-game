@@ -29,9 +29,9 @@ class Fire {
   move() {
     // Define it it's a positive (goes to the right) or a negative (goes to the left) movement
     if (this.left === 0) {
-      this.movement = 10;
+      this.movement = 15;
     } else if (this.left + this.width > this.gameScreen.offsetWidth) {
-      this.movement = -10;
+      this.movement = -15;
     }
 
     // Movement itself
