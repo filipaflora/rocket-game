@@ -23,7 +23,7 @@ class Blackhole {
     this.element.style.height = `${this.height}px`;
     this.element.style.width = `${this.width}px`;
 
-    //this.element.setAttribute('id', 'blackhole');
+    this.element.setAttribute('id', 'blackhole');
 
     this.gameScreen.appendChild(this.element);
     // console.log(this.element)
