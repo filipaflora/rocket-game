@@ -1,7 +1,7 @@
 class Fire {
   constructor(gameScreen) {
     this.gameScreen = gameScreen;
-    // pre determined location at the top right corner of the screen 
+    // pre determined location at the top right corner of the screen
     this.left = 1150;
     this.top = 0;
 
@@ -20,8 +20,8 @@ class Fire {
 
     this.gameScreen.appendChild(this.element);
 
-    // initialize the movement variable 
-    this.movement = -10;
+    // initialize the movement variable
+    this.movement = -15;
   }
 
   updatePosition() {
@@ -31,7 +31,7 @@ class Fire {
 
   move() {
     // Define if it's a positive (goes to the right) or a negative (goes to the left) movement
-    if (this.left === 0) {
+    if (this.left <= 0) {
       this.movement = 15;
     } else if (this.left + this.width > this.gameScreen.offsetWidth) {
       this.movement = -15;
@@ -41,7 +41,6 @@ class Fire {
     this.left += this.movement;
     this.top += 1.5;
 
-    
     this.updatePosition();
   }
 }
