@@ -17,7 +17,7 @@ class Blackhole {
     
     // create the HTML elements and default styling
     this.element = document.createElement("img");
-    this.element.src = "/docs/images/blackhole.png";
+    this.element.src = "docs/images/blackhole.png";
     this.element.style.position = "absolute";
     this.element.style.top = `${this.top}px`;
     this.element.style.left = `${this.left}px`;

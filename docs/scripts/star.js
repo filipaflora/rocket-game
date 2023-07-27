@@ -17,7 +17,7 @@ class Star {
 
     // create the HTML elements and default styling 
     this.element = document.createElement("img");
-    this.element.src = "/docs/images/star.png";
+    this.element.src = "docs/images/star.png";
     this.element.style.position = "absolute";
     this.element.style.top = `${this.top}px`;
     this.element.style.left = `${this.left}px`;
