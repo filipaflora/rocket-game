@@ -17,11 +17,6 @@ main {
 }
 
 #game-intro {
-  /* padding: 20px 0; */
-  /* display: flex; */
-  /* flex-direction: column;
-  justify-content: space-between; */
-  /* gap: 5px; */
   background-color: rgb(27, 23, 71);
   align-items: center;
   width: 60vw;
@@ -32,6 +27,7 @@ main {
   left: 50%;
   color: white;
   border-radius: 20px;
+
 }
 
 #game-intro p {
@@ -49,7 +45,7 @@ main {
   flex-direction: row;
   justify-content: space-evenly;
   gap: 25px;
-  /* margin: 30px 0; */
+  
 }
 
 .rocket-icon {
@@ -93,7 +89,8 @@ main {
   padding: 20px 0;
   justify-content: center;
   align-items: center;
-  cursor: auto;
+  /* cursor: auto; */
+  cursor: url("https://i.ibb.co/8Mhxb23/rocket-cursor.png"), auto;
 }
 
 #stats {
