@@ -11,7 +11,7 @@ class Game {
       800,
       100,
       150,
-      "./docs/images/rocket.png"
+      "/docs/images/rocket.png"
     );
     
     // Style for the game board
@@ -41,10 +41,10 @@ class Game {
 
     // background music
     this.backgroundMusic = null;
-    this.planetAudio = new Audio("./docs/sounds/planet-audio.mp3");
-    this.starAudio = new Audio("./docs/sounds/star-audio.mp3");
-    this.fireAudio = new Audio("./docs/sounds/fire-audio.mp3");
-    this.blackholeAudio = new Audio("./docs/sounds/blackhole-audio.mp3");
+    this.planetAudio = new Audio("/docs/sounds/planet-audio.mp3");
+    this.starAudio = new Audio("/docs/sounds/star-audio.mp3");
+    this.fireAudio = new Audio("/docs/sounds/fire-audio.mp3");
+    this.blackholeAudio = new Audio("/docs/sounds/blackhole-audio.mp3");
   }
 
   start() {
@@ -55,7 +55,7 @@ class Game {
     this.gameScreen.style.display = "block";
 
     this.backgroundMusic = document.createElement("audio");
-    this.backgroundMusic.src = "./docs/sounds/background-audio.mp3";
+    this.backgroundMusic.src = "/docs/sounds/background-audio.mp3";
     this.gameScreen.appendChild(this.backgroundMusic);
     this.backgroundMusic.play();
 

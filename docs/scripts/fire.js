@@ -11,7 +11,7 @@ class Fire {
 
     // create the HTML element and default styling
     this.element = document.createElement("img");
-    this.element.src = "./docs/images/fire.png";
+    this.element.src = "/docs/images/fire.png";
     this.element.style.position = "absolute";
     this.element.style.top = `${this.top}px`;
     this.element.style.left = `${this.left}px`;

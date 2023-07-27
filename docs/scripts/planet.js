@@ -14,7 +14,7 @@ class Planet {
     this.height = 100;
       // create the HTML element and default styling
     this.element = document.createElement("img");
-    this.element.src = "./docs/images/planet.png";
+    this.element.src = "/docs/images/planet.png";
     this.element.style.position = "absolute";
     this.element.style.top = `${this.top}px`;
     this.element.style.left = `${this.left}px`;
