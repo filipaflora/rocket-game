@@ -9,7 +9,7 @@
 body {
   padding: 0;
   text-align: center;
-  cursor: url("./docs/images/rocket-cursor.png"), auto;
+  cursor: url("https://i.ibb.co/8Mhxb23/rocket-cursor.png"), auto;
 }
 
 main {
@@ -72,7 +72,7 @@ main {
 }
 
 .avoid-collect {
-  background-image: url("./docs/images/background.jpeg");
+  background-image: url("https://i.ibb.co/qCcyJ2z/background.jpg");
   width: 300px;
   padding: 20px 0;
   border-radius: 8px;
@@ -124,7 +124,7 @@ main {
   padding: 20px 0;
   overflow: hidden;
   position: relative;
-  background-image: url("./docs/images/background.jpeg");
+  background-image: url("https://i.ibb.co/qCcyJ2z/background.jpg");
   background-size: cover;
   animation: slide 5s linear infinite;
   cursor: auto;
