@@ -53,8 +53,8 @@ main {
 }
 
 .rocket-icon {
-  width: 120px;/* width: 150px;  */
-  height: 170px;/* height: 220px; */
+  width: 120px; /* width: 150px;  */
+  height: 170px; /* height: 220px; */
   position: relative;
   z-index: 10;
   top: -70px;
@@ -86,7 +86,6 @@ main {
   top: -60px;
 }
 
-
 #game-container {
   display: flex;
   width: 100vw;
@@ -95,7 +94,6 @@ main {
   justify-content: center;
   align-items: center;
   cursor: auto;
-  
 }
 
 #stats {
@@ -151,10 +149,10 @@ main {
 
 @keyframes rotation {
   from {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-      transform: rotate(359deg);
+    transform: rotate(359deg);
   }
 }
 
@@ -179,23 +177,18 @@ main {
 }
 
 .play-button {
-  
   font-size: 30px;
-  background-image: url("./docs/images/background.jpeg");
+  background-image: url("https://i.ibb.co/qCcyJ2z/background.jpg");
   color: white;
   padding: 20px 40px;
   border: 0;
   box-shadow: 0;
   border-radius: 5px;
   margin-bottom: 20px;
-  cursor: url("./docs/images/rocket-cursor.png"), pointer;
+  cursor: url("https://i.ibb.co/8Mhxb23/rocket-cursor.png"), pointer;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .play-button:active {
   box-shadow: none;
 }
-
-
-
-
